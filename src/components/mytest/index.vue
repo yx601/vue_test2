@@ -1,10 +1,23 @@
 <template>
   <div class="swiper-container"  ref="slide1">
-    <div class="swiper-wrapper" :key='slide.id' v-for="slide in slides">
-      <router-link class="swiper-slide" tag="div" :to="{name:'BookDetail',params:{id:slide.id}}">
+    <div class="swiper-wrapper" >
+      <router-link class="swiper-slide" :key='slide.id' v-for="slide in slides" tag="div" :to="{name:'BookDetail',params:{id:slide.id}}">
         <img :src="slide.img_url"/>
       </router-link>
     </div>
+    <!--<div class="swiper-wrapper">-->
+      <!--<router-link class="swiper-slide" tag="div" to="/">-->
+        <!--<img src="@/../static/mypics/handlebars.png"/>-->
+      <!--</router-link>-->
+
+      <!--<router-link class="swiper-slide" tag="div" to="/">-->
+        <!--<img src="@/../static/mypics/pug.png"/>-->
+      <!--</router-link>-->
+
+      <!--<router-link class="swiper-slide" tag="div" to="/">-->
+        <!--<img src="@/../static/mypics/stylus.png"/>-->
+      <!--</router-link>-->
+    <!--</div>-->
     <div class="swiper-pagination" ref="pagination"></div>
   </div>
 </template>
