@@ -5,15 +5,19 @@
         <img :src="slide.img_url"/>
       </router-link>
     </div>
+    <div class="swiper-pagination" ref="pagination"></div>
   </div>
 </template>
 
 <script>
 import Swiper from 'swiper'
+import './swiper/css/swiper.css'
+
+/* eslint-disable no-new */
 export default {
   name: 'mytest',
   mounted () {
-    Swiper(this.$refs.slide1, {
+    new Swiper(this.$refs.slide1, {
       pagination: this.$refs.pagination,
       paginationClickable: true,
       spaceBetween: 30,
@@ -25,9 +29,9 @@ export default {
   data () {
     return {
       slides: [
-        {id: 1, img_url: '@assets/mypics/handlebars.png'},
-        {id: 2, img_url: '@assets/mypics/pug.png'},
-        {id: 3, img_url: '@assets/mypics/stylus.png'}
+        {id: 1, img_url: '../static/mypics/handlebars.png'},
+        {id: 2, img_url: '../static/mypics/pug.png'},
+        {id: 3, img_url: '../static/mypics/stylus.png'}
       ]
     }
   }
