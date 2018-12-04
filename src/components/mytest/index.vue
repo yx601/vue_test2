@@ -42,9 +42,9 @@ export default {
   data () {
     return {
       slides: [
-        {id: 1, img_url: '../static/mypics/handlebars.png'},
-        {id: 2, img_url: '../static/mypics/pug.png'},
-        {id: 3, img_url: '../static/mypics/stylus.png'}
+        {id: 1, img_url: require('@/assets/mypics/handlebars.png')},
+        {id: 2, img_url: require('@/assets/mypics/pug.png')},
+        {id: 3, img_url: require('@/assets/mypics/stylus.png')}
       ]
     }
   }
