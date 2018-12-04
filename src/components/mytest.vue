@@ -23,9 +23,7 @@
 </template>
 
 <script>
-import Swiper from 'swiper'
-import './swiper/css/swiper.css'
-
+import Swiper from '../../static/swiper/js/swiper.min.js'
 /* eslint-disable no-new */
 export default {
   name: 'mytest',
@@ -50,7 +48,6 @@ export default {
   }
 }
 </script>
-
 <style scoped>
-
+@import '../../static/swiper/css/swiper.min.css';
 </style>
