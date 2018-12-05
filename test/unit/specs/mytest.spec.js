@@ -1,21 +1,12 @@
 import Vue from 'vue'
-import mytest from '@/components/mytest'
+import Mytest from '@/components/mytest'
 
 describe('mytest.vue', () => {
-  it('array', () => {
-    var targetArr = []
-    beforeEach(() => {
-      targetArr.push(1)
-    })
-    afterEach(() => {
-      targetArr = []
-    })
-    it('应该有一个整数', () => {
-      expect(targetArr[0]).to.eqls(1)
-    })
-    it('可以有多个期许值检测', () => {
-      expect(targetArr[0]).to.eqls(1)
-      expect(true).to.eqls(true)
-    })
+  it('$mount()', () => {
+    const msg = 'helloworld'
+    const HtmlContainer = Vue.extend(Mytest)
+    const vm = new HtmlContainer({propsData: { msg: msg }}).$mount() // 单元测试，使用propsData进行传值
+    console.log(vm.$el)
+    expect(vm.$el.querySelector('span').textContent).to.be.equal(msg)
   })
 })

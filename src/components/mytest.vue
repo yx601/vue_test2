@@ -1,24 +1,14 @@
 <template>
-  <div class="swiper-container"  ref="slide1">
-    <div class="swiper-wrapper" >
-      <router-link class="swiper-slide" :key='slide.id' v-for="slide in slides" tag="div" :to="{name:'BookDetail',params:{id:slide.id}}">
-        <img :src="slide.img_url"/>
-      </router-link>
+  <div>
+    <span>{{ msg }}</span>
+    <div class="swiper-container"  ref="slide1">
+      <div class="swiper-wrapper" >
+        <router-link class="swiper-slide" :key='slide.id' v-for="slide in slides" tag="div" :to="{name:'BookDetail',params:{id:slide.id}}">
+          <img :src="slide.img_url"/>
+        </router-link>
+      </div>
+      <div class="swiper-pagination" ref="pagination"></div>
     </div>
-    <!--<div class="swiper-wrapper">-->
-      <!--<router-link class="swiper-slide" tag="div" to="/">-->
-        <!--<img src="@/../static/mypics/handlebars.png"/>-->
-      <!--</router-link>-->
-
-      <!--<router-link class="swiper-slide" tag="div" to="/">-->
-        <!--<img src="@/../static/mypics/pug.png"/>-->
-      <!--</router-link>-->
-
-      <!--<router-link class="swiper-slide" tag="div" to="/">-->
-        <!--<img src="@/../static/mypics/stylus.png"/>-->
-      <!--</router-link>-->
-    <!--</div>-->
-    <div class="swiper-pagination" ref="pagination"></div>
   </div>
 </template>
 
@@ -26,8 +16,10 @@
 import Swiper from '../../static/swiper/js/swiper.min.js'
 /* eslint-disable no-new */
 export default {
-  name: 'mytest',
+  name: 'Mytest',
+  props: ['msg'],
   mounted () {
+    // this.msg = this.$route.params.mid
     new Swiper(this.$refs.slide1, {
       pagination: this.$refs.pagination,
       paginationClickable: true,
